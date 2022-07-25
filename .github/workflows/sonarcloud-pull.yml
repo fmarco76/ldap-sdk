@@ -88,7 +88,7 @@ jobs:
 
   build:
     name: Building LDAP SDK
-    needs: init
+    needs: [init, retrieve-pr]
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{ fromJSON(needs.init.outputs.matrix) }}
