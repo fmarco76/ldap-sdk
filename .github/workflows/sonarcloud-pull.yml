@@ -19,8 +19,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            console.log("This is the run id: " + context.payload.workflow_run.id);
-            console.log("Now go ahead");
+            console.log(github.actions);
             var artifacts = await github.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
               repo: context.repo.repo,
