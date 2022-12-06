@@ -19,8 +19,6 @@ jobs:
         with:
           result-encoding: string
           script: |
-            console.log("Follow list");
-            console.log(Object.getOwnPropertyNames(github));
             var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -33,7 +31,7 @@ jobs:
               core.setFailed("No PR artifact");
               return "False";
             }
-            var download = await github.actions.downloadArtifact({
+            var download = await github.rest.actions.downloadArtifact({
               owner: context.repo.owne6r,
               repo: context.repo.repo,
               artifact_id: matchArtifact.id,
