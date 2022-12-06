@@ -20,7 +20,7 @@ jobs:
           result-encoding: string
           script: |
             console.log("Follow list");
-            console.log(Object.getOwnPropertyNames(github.actions));
+            console.log(Object.getOwnPropertyNames(github));
             var artifacts = await github.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
               repo: context.repo.repo,
