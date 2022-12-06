@@ -6,7 +6,6 @@
 
 
 
-
 ARG OS_VERSION="latest"
 ARG COPR_REPO="@pki/master"
 
