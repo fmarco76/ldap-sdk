@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
 
+
 ARG OS_VERSION="latest"
 ARG COPR_REPO="@pki/master"
 
@@ -34,6 +35,7 @@ ARG COPR_REPO
 
 EXPOSE 389 8080 8443
 
+
 # Enable COPR repo if specified
 RUN if [ -n "$COPR_REPO" ]; then dnf install -y dnf-plugins-core; dnf copr enable -y $COPR_REPO; fi
 
@@ -47,3 +49,4 @@ RUN dnf localinstall -y /tmp/RPMS/*; rm -rf /tmp/RPMS
 RUN dnf install -y systemd
 
 CMD [ "/usr/sbin/init" ]
+
