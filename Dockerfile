@@ -48,3 +48,4 @@ RUN dnf localinstall -y /tmp/RPMS/*; rm -rf /tmp/RPMS
 RUN dnf install -y systemd
 
 CMD [ "/usr/sbin/init" ]
+
